@@ -18,7 +18,7 @@ script:
       - docker tag reverseproxy anobahe/reverseproxy:v1
 
 after_success:
-      - echo hi0275050287 | docker login -u $DOCKER_USERNAME --password-stdin
+      - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
       - docker push anobahe/udagram-api-feed:v1
       - docker push anobahe/udagram-api-user:v1
       - docker push anobahe/udagram-frontend:v1
